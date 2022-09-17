@@ -41,3 +41,19 @@ function criaPeca(cor) {
     imagem.setAttribute('height', `${tamanhoCelula-4}px`);
     return imagem;
 }
+const imagem=document.querySelectorAll('img');
+imagem.forEach(img=>{
+    imagem.addEventListener('dragstart',dragstart);
+    imagem.addEventListener('drag',drag);
+    imagem.addEventListener('dragend',dragend);
+})
+
+function dragstart(){
+    console.log('> Start Dragging')
+}
+function drag(){
+    console.log('> Dragging')
+}
+function dragend(){
+    console.log('> Stoped Dragging')
+}

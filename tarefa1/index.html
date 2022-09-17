@@ -1,5 +1,26 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    -->
+  </body>
+    <html>
     <head>
         <title>Currículo</title>
         <meta charset="UTF-8" />
@@ -11,51 +32,99 @@
             <strong>Telefone:</strong> (27)99827-3380<br>
             <strong>Email:</strong> <a href="mailto:garcia.jops@gmail.com">garcia.jops@gmail.com</a>
         </p>
-        <hr>
-        <!--LINHA AQUI-->
-        <h2>Resumo</h2>
-        <!--teste de comentario
-        este é um exemplo de um comentario-->
-        <p>Muito interessado em tecnologia e desenvolvimento com o objetivo de crescer na área. Desde criança familiarizado com a novidade, sou extremamente dedicado e esforçado. Determinado em entregar excelência e cumprir os objetivos.
-            Sem medo da novidade e de mudanças, sempre correndo em busca de evolução profissional e pessoal! </p>
-        
-        <div>
-        <h2>Formação</h2>
-
-        <p><img src="./imagens/ifes.jfif" alt="IFES" width="50" /><strong> Sistemas de Informações</strong> - IFES</p>
-        <p><img src="./imagens/senai.jfif" alt="SENAI" width="50" /><strong> Tec. Em Redes de Computadores</strong> - SENAI</p>
-        </div>
-        
         <br>
-        <div>
-        <h2>Experiência</h2>
-        <p><img src="./imagens/pentago.jfif" alt="Pentago" width="50" /><strong> Desenvolvedor Bizagi</strong> - Pentago</p>
-        <p><img src="./imagens/morpheus.jfif" alt="MorpheusJR" width="50" /><strong> Trainee</strong> - MorpheusJR</p>
-        <p><img src="./imagens/autvix.jfif" alt="Autvix" width="50" /><strong> Estagiário de TI</strong> - Autvix</p>
-        <p><img src="./imagens/arcelor.jfif" alt="Arcelor Mittal" width="50" /><strong> Jovem aprendiz</strong> - Arcelor Mittal</p>
-        </div>
 
-        <br>
-        
-        <div>
-        <h2>Habilidades</h2>
-        <ul>
-            <li>Aprendizado rápido</li>
-            <li>Manutenção de computadores</li>
-            <li>Configuração e manutenção de servidores</li>
-            <li>Inglês</li>
-            <li>Servidores unix</li>
-            <li>Linguagens de programação</li>
-            <li>Scrum</li>
-            <li>HTML e CSS</li>
-        </ul>
-        </div>
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <h2>Resumo</h2>
+                  </button>
+                </h2>
+              </div>
+          
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                    <p>Muito interessado em tecnologia e desenvolvimento com o objetivo de crescer na área. Desde criança familiarizado com a novidade, sou extremamente dedicado e esforçado. Determinado em entregar excelência e cumprir os objetivos.
+                        Sem medo da novidade e de mudanças, sempre correndo em busca de evolução profissional e pessoal! </p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <h2>Formação</h2>
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                    <p><img src="./imagens/ifes.jfif" alt="IFES" width="50" /><strong> Sistemas de Informações</strong> - IFES</p>
+                    <p><img src="./imagens/senai.jfif" alt="SENAI" width="50" /><strong> Tec. Em Redes de Computadores</strong> - SENAI</p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <h2>Experiência</h2>
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                    <p><img src="./imagens/pentago.jfif" alt="Pentago" width="50" /><strong> Desenvolvedor Bizagi</strong> - Pentago</p>
+                    <p><img src="./imagens/morpheus.jfif" alt="MorpheusJR" width="50" /><strong> Trainee</strong> - MorpheusJR</p>
+                    <p><img src="./imagens/autvix.jfif" alt="Autvix" width="50" /><strong> Estagiário de TI</strong> - Autvix</p>
+                    <p><img src="./imagens/arcelor.jfif" alt="Arcelor Mittal" width="50" /><strong> Jovem aprendiz</strong> - Arcelor Mittal</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingFour">
+              <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    <h2>Habilidades</h2>
+                </button>
+              </h2>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+              <div class="card-body">
+                <ul>
+                    <li>Aprendizado rápido</li>
+                    <li>Manutenção de computadores</li>
+                    <li>Configuração e manutenção de servidores</li>
+                    <li>Inglês</li>
+                    <li>Servidores unix</li>
+                    <li>Linguagens de programação</li>
+                    <li>Scrum</li>
+                    <li>HTML e CSS</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingFive">
+              <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    <h2>Redes sociais</h2>
+                </button>
+              </h2>
+            </div>
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+              <div class="card-body">
+                <a href="https://www.linkedin.com/in/jopsg/"><img src="./imagens/linkedin.png" alt="Linkedin" width="30" /></a>
+                <a href="https://www.instagram.com/_jopsgarcia_/"><img src="./imagens/instagram.png" alt="Instagram" width="30" /></a>
+                <a href="https://github.com/Jops-Garcia"><img src="./imagens/GitHub.png" alt="GitHub" width="30" /></a>
+              </div>
+            </div>
+          </div>
 
-        <div>
-        <h3>Redes sociais</h3>
-        <a href="https://www.linkedin.com/in/jopsg/"><img src="./imagens/linkedin.png" alt="Linkedin" width="30" /></a>
-        <a href="https://www.instagram.com/_jopsgarcia_/"><img src="./imagens/instagram.png" alt="Instagram" width="30" /></a>
-        <a href="https://github.com/Jops-Garcia"><img src="./imagens/GitHub.png" alt="GitHub" width="30" /></a>
-        </div>
+
+
     </body>
 </html> 
