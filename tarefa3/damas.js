@@ -40,7 +40,7 @@ function criaTabuleiro() {
 }
 var elementosBlack = document.getElementsByClassName('black');
 var elementosRed = document.getElementsByClassName('red');
-var h1 = document.getElementsByTagName("span");
+//var h1 = document.getElementsByTagName("span");
 function criaPeca(cor) {
     let imagem = document.createElement('img');
     imagem.setAttribute('src', `img/${cor}.png`);
@@ -90,13 +90,24 @@ function drop(ev) {
     for(var i = 0; i < elementosBlack.length; i++) {
         elementosBlack[i].setAttribute('draggable',''+aux);
     }
-    // if (aux==true){
-        
-    //     console.log(h1[0]);
-    //     console.log(h1);
-    //     h1.innerText="Preto";
-    //     //h1[0]='<span id="turno" style="color: black;">Preto</span>';
-    //     //h1[0].setAttribute('outerHTML',"'<span id=\"turno\" style=\"color: red;\">Vermelho</span>'");
-    //     //h1.innerText="Preto";
-    //  }
+    if (aux==true){
+        let turno = document.getElementById('turno');
+        turno.innerHTML = 'Preto';
+        turno.style.color='black';
+
+        //console.log(document.getElementById('turno'));
+        // console.log(h1[0]);
+        // console.log(h1);
+        // h1.innerHTML="Preto";
+        // console.log(h1[0]);
+        // console.log(h1);
+        //h1[0]='<span id="turno" style="color: black;">Preto</span>';
+        //h1[0].setAttribute('outerHTML',"'<span id=\"turno\" style=\"color: red;\">Vermelho</span>'");
+        //h1.innerText="Preto";
+    }
+    else {
+        let turno = document.getElementById('turno');
+        turno.innerHTML = 'Vermelho';
+        turno.style.color='red';
+    }
 }
