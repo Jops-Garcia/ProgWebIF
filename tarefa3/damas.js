@@ -16,6 +16,9 @@ function criaTabuleiro() {
         tabela.append(linha);
         for (let j = 0; j < tamanho; j++) {
             let celula = document.createElement('td');
+            celula.addEventListener('drop', drop)
+            celula.dataset.lin = i
+            celula.dataset.col = j
             linha.append(celula);
 
             celula.style.width = `${tamanhoCelula}px`;
@@ -23,12 +26,13 @@ function criaTabuleiro() {
             if (i % 2 == j % 2) {
                 celula.style.backgroundColor = 'black';
                 celula.addEventListener('dragover',allowDrop);
-                celula.addEventListener('drop',drop);
                 if (i * 8 + j <= 24) {
                     const imagem = criaPeca('black')
-                    celula.append(imagem);
                     imagem.setAttribute('draggable','false');
+                    celula.removeEventListener('dragover', allowDrop)
+                    celula.append(imagem);
                 } else if (i * 8 + j >= 40) {
+                    celula.removeEventListener('dragover', allowDrop)
                     celula.append(criaPeca('red'));
                 }
             } else {
@@ -48,6 +52,8 @@ function criaPeca(cor) {
     imagem.setAttribute('height', `${tamanhoCelula-4}px`);
     imagem.id='pecaId'+pecaId++;
     imagem.className=''+cor;
+    imagem.dataset.cor = cor
+    //imagem.setAttribute('draggable', 'false')
     imagem.addEventListener('dragstart',drag);
     //imagem.addEventListener('drag',drag);
     //imagem.addEventListener('dragend',drop);
@@ -71,16 +77,43 @@ function drag(ev){
     //console.log(ev.target.id);
     ev.dataTransfer.setData("pecaId", ev.target.id);
     console.log(ev.dataTransfer.getData("pecaId"));
+    ev.dataTransfer.setData("imgid", ev.target.id);
 }
 
 function dragend(){
     console.log('> Stoped Dragging')
+}
+function jogadorDaVez() {
+    const pecas = document.querySelectorAll('.peca')
+    pecas.forEach(peca => {
+        peca.draggable = !peca.draggable
+    });
+}
+function movimentoRegular(origem, destino) {
+    const imagem = origem.querySelector(`img`)
+    return ((imagem.dataset.cor == 'red' && 
+             destino.dataset.lin == origem.dataset.lin-1) ||
+            (imagem.dataset.cor == 'black' && 
+             destino.dataset.lin-1 == origem.dataset.lin)) && 
+            (destino.dataset.col == origem.dataset.col-1 ||
+             destino.dataset.col-1 == origem.dataset.col)
 }
 
 function drop(ev) {
     ev.preventDefault();
     let data = ev.dataTransfer.getData("pecaId");
     ev.target.appendChild(document.getElementById(data));
+
+    const imgid= ev.dataTransfer.getData("imgid");
+    const imagem = document.querySelector(`#${imgid}`)
+    const origem = imagem.parentElement
+    const destino = ev.target
+    if (movimentoRegular(origem, destino)){
+        origem.addEventListener('dragover', allowDrop)
+        destino.appendChild(imagem);
+        destino.removeEventListener('dragover', allowDrop)
+        jogadorDaVez();
+    }
 
     //Alterando Jogadores
     for(var i = 0; i < elementosRed.length; i++) {
